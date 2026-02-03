@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fresh Fruits Store</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <h2>🍎 FreshFruits</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Categories</a>
+    <a href="#">Seasonal</a>
+    <a href="#" onclick="openPopup()">Offers</a>
+    <button onclick="openCart()">🛒 Cart</button>
+    <button onclick="openAddress()">Place Order</button>
+
+    <button onclick="openLogin()">Login</button>
+
+  </nav>
+</header>
+
+<!-- VIDEO BANNER -->
+<section class="hero">
+  <video autoplay muted loop>
+    <source src="
+    video_preview_h264.mp4" type="video/mp4">
+  </video>
+  <div class="overlay">
+    <h1>Fresh & Juicy Fruits</h1>
+    <p>Delivered to your door</p>
+    <button class="shop-btn">Shop Now</button>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories">
+  <h2>Shop By Category</h2>
+  <div class="grid">
+    <div class="card">Citrus Fruits</div>
+    <div class="card">Berries</div>
+    <div class="card">Tropical Fruits</div>
+    <div class="card">Apples & Pears</div>
+  </div>
+</section>
+
+<!-- SEASONAL -->
+<section class="seasonal">
+  <h2>Seasonal Fruits</h2>
+  <div class="grid">
+    <div class="product">
+      <img src="images/mango.jpg">
+      <h4>Mango</h4>
+      <button onclick="addToCart('Mango')">Add</button>
+    </div>
+    <div class="product">
+      <img src="apple.png">
+      <h4>Apple</h4>
+      <button onclick="addToCart('Apple')">Add</button>
+    </div>
+  </div>
+</section>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-box">
+    <span onclick="closePopup()">✖</span>
+    <h3>🎉 Special Offer</h3>
+    <p>Get 20% off on Seasonal Fruits!</p>
+  </div>
+</div>
+
+<!-- CART -->
+<div id="cart" class="popup">
+  <div class="popup-box">
+    <span onclick="closeCart()">✖</span>
+    <h3>Your Cart</h3>
+    <ul id="cartItems"></ul>
+  </div>
+</div>
+<!-- LOGIN POPUP -->
+<div id="loginPopup" class="popup">
+  <div class="popup-box">
+    <span onclick="closeLogin()">✖</span>
+    <h3>Login</h3>
+    <input type="text" id="username" placeholder="Username"><br><br>
+    <input type="password" id="password" placeholder="Password"><br><br>
+    <button onclick="loginUser()">Login</button>
+  </div>
+</div>
+
+<!-- ADDRESS POPUP -->
+<div id="addressPopup" class="popup">
+  <div class="popup-box">
+    <span onclick="closeAddress()">✖</span>
+    <h3>Delivery Address</h3>
+    <input type="text" id="name" placeholder="Full Name"><br><br>
+    <input type="text" id="phone" placeholder="Mobile Number"><br><br>
+    <textarea id="address" placeholder="Full Address"></textarea><br><br>
+    <button onclick="confirmOrder()">Confirm Order</button>
+  </div>
+</div>
+
+</body>
+
+</body>
+</html>
