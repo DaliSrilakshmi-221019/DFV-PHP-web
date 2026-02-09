@@ -1,8 +1,30 @@
 <?php
 include"db_connect.php";
 if(isset($_POST['login'])){
+    //-----1.get input--------
     $email=$_POST['email'];
     $password=$_POST['password'];
+
+    //-----2.clean strings-----
+    $email=trim($email);
+    $password=trim($password);
+    $email=strtolower($email);
+
+
+    //------validate--------
+    if(strlen($email)<5){
+        die("invalid email format");
+    }
+    if(strpos($email,"@")===false){
+        die("invalid email format");
+    }
+
+    //------security------------
+    $email=htmlspecialchars($email);
+    $email=addslashes($email);
+
+    //database
+
     $sql="select * from users where email='$email'";
     $result=mysqli_query($conn,$sql);
     if(mysqli_num_rows($result)==1){
